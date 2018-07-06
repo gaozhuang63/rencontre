@@ -1,0 +1,37 @@
+<import src="../../component/nullTip/nullTip.wxml"/>
+<view class="tab-header">
+    <view class="tab-header-item {{show == 'ticket_getting' ? 'tab-header-active' : ''}}" data-type="ticket_getting" bindtap="changeViewType">电影</view>
+</view>
+<view class="tab-content">
+    <view class="tab-content-item" hidden="{{show == 'ticket_getting' ? false : true}}">
+        <block wx:if="{{ticket_getting.length == 0}}">
+            <template is="nullTip" data="{{nullTip: nullTip}}"/>
+        </block>
+        <block wx:else>
+            <block wx:for="{{ticket_getting}}" wx:for-item="filmFavoriteItem" wx:for-index="filmFavoriteIndex" wx:key="filmFavorite">
+                <view class="ticket-film-item" data-id="{{filmFavoriteItem.id}}" bindtap="viewFilmDetail">
+                    <image class="ticket-film-cover" src="{{filmFavoriteItem.images.large}}"></image>
+                    <view class="ticket-film-info">
+                        <view class="ticket-film-txt ticket-film-title">{{filmFavoriteItem.title}}</view>
+                        <view class="ticket-film-txt">导演：{{filmFavoriteItem.directors[0].name}}</view>
+                        <view class="ticket-film-txt">演员：
+                            <block wx:for="{{filmFavoriteItem.casts}}" wx:for-item="filmDetailCastItem" wx:for-index="filmDetailCastIndex" wx:key="filmDetailCastItem">
+                                {{filmDetailCastItem.name}}
+                                <block wx:if="{{filmDetailCastIndex !== filmFavoriteItem.casts.length - 1}}">/</block>
+                            </block>
+                        </view>
+                        <view class="ticket-film-txt">豆瓣评分：
+                            <block wx:if="{{filmFavoriteItem.rating.average == 0}}">
+                                暂无评分
+                            </block>
+                            <block wx:else>
+                                {{filmFavoriteItem.rating.average}}分
+                            </block>
+                        </view>
+                        <view class="ticket-film-txt">上映年份：{{filmFavoriteItem.year}}年</view>
+                    </view>
+                </view>
+            </block>
+        </block>
+    </view>
+</view>

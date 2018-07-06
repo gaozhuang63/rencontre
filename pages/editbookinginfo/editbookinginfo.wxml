@@ -1,0 +1,90 @@
+<form bindsubmit="savebooking">
+    <view class="form-list">
+        <view class="form-item">
+            <view class="form-item-hd">姓名</view>
+            <view class="form-item-bd">
+                <input type="text" name="name" value="{{name}}" placeholder="请输入姓名" maxlength="6"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">订票日期</view>
+            <view class="form-item-bd">
+                <picker mode="date" value="{{ticketdate}}" start="1990-01-01" end="{{birthdayEndDate}}" fields="day" bindchange="changedate">
+                    <block wx:if="{{ticketdate == ''}}">
+                        <view class="input input-placeholder">请选择日期</view>
+                        <input type="text" name="ticketdate" value="" class="hidden" maxlength="10"/>
+                    </block>
+                    <block wx:else>
+                        <view class="input">{{ticketdate}}</view>
+                        <input type="text" name="ticketdate" value="{{ticketdate}}" class="hidden" maxlength="10"/>
+                    </block>
+                </picker>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">座位信息</view>
+            <view class="form-item-bd">
+                <picker mode="multiSelector" value="{{position}}" range="{{positionArray}}" range-key="{{'name'}}" bindchange="bindMultiPickerChange2">
+                    <block wx:if="{{position == ''}}">
+                        <view class="input input-placeholder">请选择座位</view>
+                        <input type="text" name="position" value="" class="hidden" maxlength="20"/>
+                    </block>
+                    <block wx:else>
+                        <view class="input">{{positionArray[0][position[0]].name}}，{{positionArray[1][position[1]].name}}
+                         </view>
+                        <input type="text" name="position" value="{{positionArray[0][position[0]].name}}，{{positionArray[1][position[1]].name}}" class="hidden" maxlength="20"/>
+                    </block>
+                </picker>
+            </view>
+        </view>
+
+        <view class="form-item">
+            <view class="form-item-hd">购票价格</view>
+            <view class="form-item-bd">
+                
+                <block wx:if="{{position==''}}">
+                        <view class="input input-placeholder">选择座位后提供价格</view>
+                </block>
+                <block wx:elif="{{position[1]<3}}">
+                        <view class="input">55元 </view>
+                        <input type="text" name="money" value="50元" class="hidden" maxlength="20"/>
+                </block>
+                <block wx:elif="{{position[1]>=3 && position[1]<6}}">
+                        <view class="input">60元 </view>
+                        <input type="text" name="money" value="60元" class="hidden" maxlength="20"/>
+                </block>
+                <block wx:elif="{{position[1]>5 && position[1]<=8}}">
+                        <view class="input">50元 </view>
+                        <input type="text" name="money" value="55元" class="hidden" maxlength="20"/>
+                </block>
+            </view>           
+       </view>
+
+
+
+        <view class="form-item">
+            <view class="form-item-hd">支付方式</view>
+            <view class="form-item-bd">
+                <picker mode="selector" value="{{genderIndex}}" range="{{genderArray}}" bindchange="changeGender">
+                    <block wx:if="{{taking == ''}}">
+                        <view class="input input-placeholder">请选择支付方式</view>
+                        <input type="text" name="taking" value="" class="hidden" maxlength="10"/>
+                    </block>
+                    <block wx:else>
+                        <view class="input">{{genderArray[genderIndex]}}</view>
+                        <input type="text" name="taking" value="{{genderArray[genderIndex]}}" class="hidden" maxlength="10"/>
+                    </block>
+                </picker>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">手机号码</view>
+            <view class="form-item-bd">
+                <input type="number" name="tel" value="{{tel}}" placeholder="请输入手机号码" maxlength="11"/>
+            </view>
+        </view>
+    </view>
+    
+    <button formType="submit" class="edit-btn">保 存</button>
+    
+</form>
