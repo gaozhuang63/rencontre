@@ -4,11 +4,10 @@ Page({
   data:{
     gridList: [
       {enName:'ticket',zhName:'已购'},
-      /*{enName:'favorite', zhName:'收藏'},
+      {enName:'favorite', zhName:'收藏'},
       {enName:'history', zhName:'浏览记录'},
-      {enName:'shake', zhName:'摇一摇'},
-      {enName:'gallery', zhName:'相册'},
-      */
+      //{enName:'shake', zhName:'摇一摇'},
+      //{enName:'gallery', zhName:'相册'},
       {enName:'setting', zhName:'设置'}
     ],
     skin: ''

@@ -20,6 +20,7 @@
     "pages/about/about",
     "pages/location/location",
     "pages/ticket/ticket",
+    "pages/ticketDetail/ticketDetail",
     "pages/booking/booking",
     "pages/editbookinginfo/editbookinginfo"
   ],

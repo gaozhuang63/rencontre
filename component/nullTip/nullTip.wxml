@@ -4,6 +4,9 @@
         <view bindtap="{{nullTip.fn}}" class="null-action">{{nullTip.actionText}}</view>
     </block>
     <block wx:else>
-        <navigator url="{{nullTip.routeUrl}}" class="null-action">{{nullTip.actionText}}</navigator>
+        <navigator url="../../pages/ticketDetail/ticketDetail" class="null-action">{{nullTip.actionText}}</navigator>
     </block>
 </template>
+
+
+

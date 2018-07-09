@@ -1,4 +1,4 @@
-/*var douban = require('../../comm/script/fetch')
+var douban = require('../../comm/script/fetch')
 var config = require('../../comm/script/config')
 Page({
 	data: {

@@ -28,14 +28,14 @@ module.exports = {
         personDetail: 'https://douban.uieee.com/v2/movie/celebrity/',
         baiduMap: 'https://api.map.baidu.com/geocoder/v2/'
     },
-    hotKeyword: ['功夫熊猫', '烈日灼心', '摆渡人', '长城', '我不是潘金莲', '这个杀手不太冷', '驴得水', '海贼王之黄金城', '西游伏妖片', '我在故宫修文物', '你的名字'],
+    hotKeyword: ['我不是药神', '动物世界', '侏罗纪世界2', '超人总动员2', '新大头儿子和小头爸爸', '金蝉脱壳2', '徐峥', '王传君', '李易峰'],
     hotTag: ['动作', '喜剧', '爱情', '悬疑'],
     bannerList: [
-        {type:'film', id: '26683290', imgUrl: url + '/images/banner_1.jpg'},
-        {type:'film', id: '25793398', imgUrl: url + '/images/banner_2.jpg'},
-        {type:'film', id: '26630781', imgUrl: url + '/images/banner_3.jpg'},
-        {type:'film', id: '26415200', imgUrl: url + '/images/banner_4.jpg'},
-        {type:'film', id: '3025375', imgUrl: url + '/images/banner_5.jpg'}
+      { type: 'film', id: '26752088', imgUrl: '../../dist/images/t_1.jpg'},
+      { type: 'film', id: '26925317', imgUrl: '../../dist/images/t_2.jpg'},
+      { type: 'film', id: '30198729', imgUrl: '../../dist/images/t_3.jpg'},
+      { type: 'film', id: '26416062', imgUrl: '../../dist/images/t_4.jpg'},
+      { type: 'film', id: '25849049', imgUrl: '../../dist/images/t_5.jpg'}
     ],
     skinList: [
         {title: '公路', imgUrl: url + '/images/user_bg_1.jpg'},

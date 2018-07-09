@@ -3,12 +3,12 @@ Page({
   data:{
     cells: [
       [{title: '个人资料', text: '', access: true, fn: 'viewPersonInfo'}],
-      /*[
+      [
         {title: '手机信息', text: '', access: true, fn: 'viewSystemInfo'},
         {title: '清除缓存', text: '', access: false, fn: 'clearStorage'}
       ],
       [{title: '更新位置', text: '', access: true, fn: 'viewLocation'}],
-      [{title: '关于', text: '', access: true, fn: 'viewAbount'}]*/
+      [{title: '关于', text: '', access: true, fn: 'viewAbount'}]
     ]
   },
   onLoad:function(options){},

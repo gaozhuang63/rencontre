@@ -1,4 +1,5 @@
 var util = require('../../util/util')
+
 Page({
   data: {
     name: '',
@@ -117,12 +118,14 @@ Page({
         name: data.name,
         ticketdate: data.ticketdate,
         taking: data.taking,
-        money: data.money,
+        money: data.money,       
         position: data.position,
         tel: data.tel,
       },
       success: function (res) {
-        
+        var reg = /^[\u4E00-\u9FA5]{2,6}$/ ;      //正则表达式 用于判断姓名输入是否合法
+
+
         if (e.detail.value.name.length == 0 || e.detail.value.ticketdate.length == 0 || e.detail.value.taking.length == 0 || e.detail.value.position.length == 0 || e.detail.value.tel.length == 0) {
           wx.showToast({
             title: '请完整填写信息！',
@@ -130,7 +133,24 @@ Page({
             mask: false, 
             duration: 2000
           })
-        }else {  
+        }
+        else if (e.detail.value.tel.length != 11 || e.detail.value.tel < 10000000000 || e.detail.value.tel>20000000000) {
+          wx.showToast({
+            title: '请正确填写手机号码！',
+            image: '../../dist/images/error.png',
+            mask: false,
+            duration: 2000
+          })
+        }
+        else if (!reg.test(e.detail.value.name)) {
+          wx.showToast({
+            title: '请正确填写姓名！',
+            image: '../../dist/images/error.png',
+            mask: false,
+            duration: 2000
+          })
+        }
+        else { 
         wx.showToast({
           title: '购买成功！',
           icon: 'success',

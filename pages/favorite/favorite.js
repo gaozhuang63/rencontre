@@ -1,12 +1,12 @@
 var filmNullTip = {
       tipText: '亲，找不到电影的收藏',
       actionText: '去逛逛',
-      routeUrl: '../../pages/popular/popular'
+      routeUrl: '../../pages/top/top'
     }
 var personNullTip = {
       tipText: '亲，找不到人物的收藏',
       actionText: '去逛逛',
-      routeUrl: '../../pages/popular/popular'
+      routeUrl: '../../pages/top/top'
     }
 Page({
   data:{
@@ -37,7 +37,7 @@ Page({
   },
   viewFilmDetail: function(e) {
 		var data = e.currentTarget.dataset
-		wx.redirectTo({
+    wx.redirectTo({
 			url: "../filmDetail/filmDetail?id=" + data.id
 		})
   },

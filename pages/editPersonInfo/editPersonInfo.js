@@ -38,7 +38,7 @@ Page({
           tel: data.tel,
           email: data.email,
           intro: data.intro,
-          birthdayEndDate: birthdayEndDate
+          birthdayEndDate: data.birthdayEndDate
         })
       },
     })
@@ -63,16 +63,36 @@ Page({
         intro: data.intro
       },
       success: function(res){
-        wx.showToast({
-          title: '资料修改成功',
-          icon: 'success',
-          duration: 2000
-        })
-        setTimeout(function(){
-          wx.navigateTo({
-            url: '../personInfo/personInfo'
+        var reg = /^[\u4E00-\u9FA5]{2,6}$/;      //正则表达式 用于判断姓名输入是否合法
+
+        if (!reg.test(e.detail.value.name)) {
+          wx.showToast({
+            title: '请正确填写姓名！',
+            image: '../../dist/images/error.png',
+            mask: false,
+            duration: 2000
           })
-        },2000)
+        }
+        else if (e.detail.value.age>120){
+          wx.showToast({
+            title: '请正确填写年龄!',
+            image: '../../dist/images/error.png',
+            mask: false,
+            duration: 2000
+          })
+        }
+        else {
+          wx.showToast({
+            title: '保存成功！',
+            icon: 'success',
+            duration: 2000 
+          })
+          setTimeout(function () {
+            wx.navigateTo({
+              url: '../ticket/ticket'
+            })
+          }, 2000)
+        }
       }
     })
   },

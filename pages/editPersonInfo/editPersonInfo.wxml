@@ -3,13 +3,13 @@
         <view class="form-item">
             <view class="form-item-hd">姓名</view>
             <view class="form-item-bd">
-                <input type="text" name="name" value="{{name}}" placeholder="请输入姓名" maxlength="4"/>
+                <input type="text" name="name" value="{{name}}" placeholder="请输入姓名" maxlength="6"/>
             </view>
         </view>
         <view class="form-item">
             <view class="form-item-hd">昵称</view>
             <view class="form-item-bd">
-                <input type="text" name="nickName" value="{{nickName}}" placeholder="请输入昵称" maxlength="8"/>
+                <input type="text" name="nickName" value="{{nickName}}" placeholder="请输入昵称" maxlength="10"/>
             </view>
         </view>
         <view class="form-item">
@@ -36,7 +36,7 @@
         <view class="form-item">
             <view class="form-item-hd">生日</view>
             <view class="form-item-bd">
-                <picker mode="date" value="{{birthday}}" start="1900-01-01" end="{{birthdayEndDate}}" bindchange="changeBirthday">
+                <picker mode="date" value="{{birthday}}" start="1900-01-01" end="{{birthdayEndDay}}" bindchange="changeBirthday">
                     <block wx:if="{{birthday == ''}}">
                         <view class="input input-placeholder">请选择生日</view>
                         <input type="text" name="birthday" value="" class="hidden" maxlength="10"/>
@@ -69,13 +69,13 @@
         <view class="form-item">
             <view class="form-item-hd">公司</view>
             <view class="form-item-bd">
-                <input type="text" name="company" value="{{company}}" placeholder="请输入公司名" maxlength="25"/>
+                <input type="text" name="company" value="{{company}}" placeholder="请输入公司名称" maxlength="25"/>
             </view>
         </view>
         <view class="form-item">
             <view class="form-item-hd">学校</view>
             <view class="form-item-bd">
-                <input type="text" name="school" value="{{school}}" placeholder="请输入公司名称" maxlength="25"/>
+                <input type="text" name="school" value="{{school}}" placeholder="请输入学校名称" maxlength="25"/>
             </view>
         </view>
         <view class="form-item">

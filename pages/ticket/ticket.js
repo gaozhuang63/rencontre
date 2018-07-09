@@ -1,5 +1,5 @@
 var filmNullTip = {
-  tipText: '亲，找不到电影的收藏',
+  tipText: '还没有购买电影票哦',
   actionText: '去逛逛',
   routeUrl: '../../pages/popular/popular'
 }
