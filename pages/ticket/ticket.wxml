@@ -1,4 +1,4 @@
-<import src="../../component/nullTip/nullTip.wxml"/>
+<import src="../../component/Tip/Tip.wxml"/>
 <view class="tab-header">
     <view class="tab-header-item {{show == 'ticket_getting' ? 'tab-header-active' : ''}}" data-type="ticket_getting" bindtap="changeViewType">电影</view>
 </view>

@@ -30,7 +30,7 @@ Page({
 	viewFilmDetail: function(e) {
 		var data = e.currentTarget.dataset;
 		wx.navigateTo({
-			url: "../filmDetail/filmDetail?id=" + data.id
+			url: "../filmDetail1/filmDetail1?id=" + data.id
 		})
 	},
 	viewFilmByTag: function(e) {

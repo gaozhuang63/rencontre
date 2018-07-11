@@ -3,11 +3,6 @@ var filmNullTip = {
   actionText: '去逛逛',
   routeUrl: '../../pages/popular/popular'
 }
-var personNullTip = {
-  tipText: '亲，找不到人物的收藏',
-  actionText: '去逛逛',
-  routeUrl: '../../pages/popular/popular'
-}
 Page({
   data: {
     ticket_getting: [],
@@ -25,14 +20,7 @@ Page({
         })
       }
     })
-    /*wx.getStorage({
-      key: 'person_favorite',
-      success: function (res) {
-        that.setData({
-          person_favorite: res.data
-        })
-      }
-    })*/
+    
     wx.stopPullDownRefresh()
   },
   viewFilmDetail: function (e) {
@@ -41,17 +29,12 @@ Page({
       url: "../booking/booking?id=" + data.id
     })
   },
-  /*viewPersonDetail: function (e) {
-    var data = e.currentTarget.dataset
-    wx.redirectTo({
-      url: "../personDetail/personDetail?id=" + data.id
-    })
-  },*/
+ 
   changeViewType: function (e) {
     var data = e.currentTarget.dataset
     this.setData({
       show: data.type,
-      nullTip: data.type == 'ticket_getting' ? filmNullTip : personNullTip
+      nullTip: data.type == filmNullTip 
     })
   }
 })

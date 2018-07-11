@@ -1,5 +1,5 @@
 @import '../../comm/style/tab.wxss';
-@import '../../component/nullTip/nullTip.wxss';
+@import '../../component/Tip/Tip.wxss';
 
 .ticket-film-item {
     display: flex;

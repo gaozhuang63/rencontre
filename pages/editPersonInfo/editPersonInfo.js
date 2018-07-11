@@ -4,6 +4,7 @@ Page({
     name: '',
     nickName: '',
     gender: 0,
+    ticketdate: '',
     genderArray: ['男', '女'],
     genderIndex: 0,
     age: 0,
@@ -31,6 +32,7 @@ Page({
           nickName: data.nickName,
           gender: data.gender,
           age: data.age,
+          ticketdate: data.ticketdate,
           birthday: data.birthday,
           constellation: data.constellation,
           company: data.company,
@@ -64,7 +66,9 @@ Page({
       },
       success: function(res){
         var reg = /^[\u4E00-\u9FA5]{2,6}$/;      //正则表达式 用于判断姓名输入是否合法
-
+        var reg1 = /^[\u4E00-\u9FA5]{2,10}$/;      //正则表达式 用于判断昵称输入是否合法
+        var reg2 = /^[\u4E00-\u9FA5]{0,30}$/; 
+        var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/; //邮箱验证
         if (!reg.test(e.detail.value.name)) {
           wx.showToast({
             title: '请正确填写姓名！',
@@ -73,9 +77,49 @@ Page({
             duration: 2000
           })
         }
-        else if (e.detail.value.age>120){
+        else if (!reg1.test(e.detail.value.nickName)) {
+          wx.showToast({
+            title: '请正确填写昵称！',
+            image: '../../dist/images/error.png',
+            mask: false,
+            duration: 2000
+          })
+        }
+        else if (!reg2.test(e.detail.value.company)) {
+          wx.showToast({
+            title: '请正确填写公司！',
+            image: '../../dist/images/error.png',
+            mask: false,
+            duration: 2000
+          })
+        }
+        else if (!reg2.test(e.detail.value.school)) {
+          wx.showToast({
+            title: '请正确填写学校！',
+            image: '../../dist/images/error.png',
+            mask: false,
+            duration: 2000
+          })
+        }
+        else if (e.detail.value.age>100){
           wx.showToast({
             title: '请正确填写年龄!',
+            image: '../../dist/images/error.png',
+            mask: false,
+            duration: 2000
+          })
+        }
+        else if (e.detail.value.tel.length != 11 || e.detail.value.tel < 10000000000 || e.detail.value.tel > 20000000000) {
+          wx.showToast({
+            title: '请正确填写手机号码！',
+            image: '../../dist/images/error.png',
+            mask: false,
+            duration: 2000
+          })
+        }
+        else if (!myreg.test(e.detail.value.email)) {
+          wx.showToast({
+            title: '请正确填写邮箱!',
             image: '../../dist/images/error.png',
             mask: false,
             duration: 2000

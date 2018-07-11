@@ -36,7 +36,7 @@
         <view class="form-item">
             <view class="form-item-hd">生日</view>
             <view class="form-item-bd">
-                <picker mode="date" value="{{birthday}}" start="1900-01-01" end="2020-01-01" bindchange="changeBirthday">
+                <picker mode="date" value="{{birthday}}" start="1950-01-01" end="2018-7-13" bindchange="changeBirthday">
                     <block wx:if="{{birthday == ''}}">
                         <view class="input input-placeholder">请选择生日</view>
                         <input type="text" name="birthday" value="" class="hidden" maxlength="10"/>
@@ -47,21 +47,6 @@
                     </block>
                 </picker>
                 
-            </view>
-        </view>
-        <view class="form-item">
-            <view class="form-item-hd">星座</view>
-            <view class="form-item-bd">
-                <picker mode="selector" value="{{constellationIndex}}" range="{{constellationArray}}" bindchange="changeConstellation">
-                    <block wx:if="{{constellation == ''}}">
-                        <view class="input input-placeholder">请选择星座</view>
-                        <input type="text" name="constellation" value="" class="hidden" maxlength="3"/>
-                    </block>
-                    <block wx:else>
-                        <view class="input">{{constellationArray[constellationIndex]}}</view>
-                        <input type="text" name="constellation" value="{{constellationArray[constellationIndex]}}" class="hidden" maxlength="3"/>
-                    </block>
-                </picker>
             </view>
         </view>
     </view>

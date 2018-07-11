@@ -14,7 +14,6 @@ Page({
         cells[0].push({title: '性别', text: data.gender == '' ? '未填写' : data.gender, access: false, fn: ''})
         cells[0].push({title: '年龄', text: data.age == '' ? '未填写' : data.age, access: false, fn: ''})
         cells[0].push({title: '生日', text: data.birthday == '' ? '未填写' : data.birthday, access: false, fn: ''})
-        cells[0].push({title: '星座', text: data.constellation == '' ? '未填写' : data.constellation, access: false, fn: ''})
         cells[1].push({title: '公司', text: data.company == '' ? '未填写' : data.company, access: false, fn: ''})
         cells[1].push({title: '学校', text: data.school == '' ? '未填写' : data.school, access: false, fn: ''})
         cells[1].push({title: '手机号码', text: data.tel == '' ? '未填写' : data.tel, access: false, fn: ''})
