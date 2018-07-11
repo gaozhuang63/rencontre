@@ -9,7 +9,7 @@
         <view class="form-item">
             <view class="form-item-hd">订票日期</view>
             <view class="form-item-bd">
-                <picker mode="date" value="{{ticketdate}}" start="1990-01-01" end="{{birthdayEndDate}}" fields="day" bindchange="changedate">
+                <picker mode="date" value="{{ticketdate}}" start="{{ticketdate}}" end="2018-09-11" fields="day" bindchange="changedate">
                     <block wx:if="{{ticketdate == ''}}">
                         <view class="input input-placeholder">请选择日期</view>
                         <input type="text" name="ticketdate" value="" class="hidden" maxlength="10"/>

@@ -7,6 +7,7 @@ Page({
     gender: 0,
     genderArray: ['微信支付', '现场支付'],
     genderIndex: 0,
+    birthdayEndDate: '',
     positionArray: [
       [
         {
@@ -90,7 +91,7 @@ Page({
   },
   
   onLoad: function (options) {
-    var birthdayEndDate = util.getticketDate()
+    var birthdayEndDate = util.getDate()
     var ticketdate = util.getticketDate()
   
     var that = this
@@ -103,6 +104,7 @@ Page({
           ticketdate: data.ticketdate,
           taking: data.taking,
           money: data.money,
+          birthdayEndDate: data.birthdayEndDate,
           position:data.position,
           tel: data.tel,
         })
